@@ -1,0 +1,19 @@
+{
+    "urls": [
+        {
+            "id": "1c1aa2476c",
+            "destination": "https://www.google.com/",
+            "created_at": "2022-01-21T11:31:23.116Z"
+        },
+        {
+            "id": "6be94e773e",
+            "destination": "https://www.bing.com/",
+            "created_at": "2022-01-21T11:13:31.547Z"
+        },
+        {
+            "id": "39da20c3e5",
+            "destination": "https://ui.dev/",
+            "created_at": "2022-01-22T11:14:35.347Z"
+        }
+    ]
+}

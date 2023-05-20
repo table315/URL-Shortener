@@ -1,6 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
-import userEvent from "@testing-library/user-event";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import useAxios from "axios-hooks";
 import UrlShortenerForm from "./UrlShortenerForm";
 
@@ -25,8 +23,10 @@ describe("UrlShortenerForm", () => {
         const input = screen.getByLabelText("Destination");
         const submitButton = screen.getByText("Shorten");
 
-        userEvent.type(input, "https://example.com/my-url-to-shorten");
-        userEvent.click(submitButton);
+        fireEvent.change(input, {
+            target: { value: "https://example.com/my-url-to-shorten" },
+        });
+        fireEvent.click(submitButton);
 
         await waitFor(() => {
             const shortenedUrlText = screen.getByText(
@@ -51,8 +51,10 @@ describe("UrlShortenerForm", () => {
         const input = screen.getByLabelText("Destination");
         const submitButton = screen.getByText("Shorten");
 
-        userEvent.type(input, "https://example.com/my-url-to-shorten");
-        userEvent.click(submitButton);
+        fireEvent.change(input, {
+            target: { value: "https://example.com/my-url-to-shorten" },
+        });
+        fireEvent.click(submitButton);
 
         await waitFor(() => {
             expect(
@@ -78,8 +80,8 @@ describe("UrlShortenerForm", () => {
         const input = screen.getByLabelText("Destination");
         const submitButton = screen.getByText("Shorten");
 
-        userEvent.type(input, "invalid-url");
-        userEvent.click(submitButton);
+        fireEvent.change(input, { target: { value: "invalid-url" } });
+        fireEvent.click(submitButton);
 
         await waitFor(() => {
             expect(

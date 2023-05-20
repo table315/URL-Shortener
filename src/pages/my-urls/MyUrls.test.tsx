@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 import useAxios from "axios-hooks";
 import MyUrls from "./MyUrls";
 
@@ -121,7 +120,7 @@ describe("MyUrls", () => {
         setup();
 
         const copyButton = screen.getByRole("button");
-        userEvent.click(copyButton);
+        fireEvent.click(copyButton);
         expect(window.navigator.clipboard.writeText).toHaveBeenCalledWith(
             "http://localhost:3001/test1"
         );

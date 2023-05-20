@@ -21,3 +21,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### To run Test 
 ### `npm test`
+
+
+### Area of improvements
+If there are more times...
+- allow the input to take url without protocol section.
+- add paginations to the url list.
+- add the ability to verify the destination site is valid and grab the title of the site and store them.
